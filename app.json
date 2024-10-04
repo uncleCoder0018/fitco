@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "Fitnescopedia",
+    "slug": "Fitnescopedia",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./components/assets/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "ios"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./components/assets/icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.lassangang.Fitnescopedia"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "dd4fc25a-eb6d-4f16-a37e-a7b55b7352c0"
+      }
+    }
+  }
+}

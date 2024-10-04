@@ -1,0 +1,323 @@
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import SignIn from "./components/SignIn";
+import Registration from "./components/Registration";
+import ContentSelection from "./components/ContentSelection";
+import Exercise from "./components/Exercise";
+import Posing from "./components/Posing/Posing";
+import Meal from "./components/Meals/Meal";
+import Yoga from "./components/Yoga/Yoga";
+import Gym from "./components/Gym";
+import Homeworkout from './components/Homeworkout';
+import Chestandcardio from './components/Chest/Chestandcardio';
+import Chest from './components/Chest/Chest';
+import Flatbenchpress from './components/Chest/Flatbenchpress';
+import Inclinedbenchpress from './components/Chest/Inclinedbenchpress';
+import Declinedbenchpress from './components/Chest/Declinedbenchpress';
+import Dumbellfly from './components/Chest/Dumbellfly';
+import Dumbellpullover from './components/Chest/Dumbellpullover';
+import Cablecrossover from './components/Chest/Cablecrossover';
+import Cardio from './components/Cardio/Cardio';
+import MountainClimbers from './components/Cardio/MountainClimbers';
+import Burpees from './components/Cardio/Burpees';
+import JumpingJacks from './components/Cardio/JumpingJacks';
+import HighKnees from './components/Cardio/HighKnees';
+import JumpingRope from './components/Cardio/JumpingRope';
+import Running from './components/Cardio/Running';
+import Battelingropes from './components/Cardio/Battelingropes';
+import Back from './components/Back/Back';
+import Latpulldown from './components/Back/Latpulldown';
+import Onearmdumbbellrow from './components/Back/Onearmdumbbellrow';
+import Seatedcablerows from './components/Back/Seatedcablerows';
+import Bentoverrow from './components/Back/Bentoverrow';
+import Tbarrow from './components/Back/Tbarrow';
+import Deadlift from './components/Back/Deadlift';
+import BiecepsNtriceps from './components/Biceps&triceps/BiecepsNtriceps';
+import Biceps from './components/Biceps&triceps/Biceps';
+import Triceps from './components/Biceps&triceps/Triceps';
+import Hammercurls from './components/Biceps&triceps/Hammercurls';
+import Barbellcurls from './components/Biceps&triceps/Barbellcurls';
+import Preachercurls from './components/Biceps&triceps/Preachercurls';
+import Concentrationcurls from './components/Biceps&triceps/Concentrationcurls';
+import Bicepscurls from './components/Biceps&triceps/Bicepscurls';
+import Inclinedubellcurls from './components/Biceps&triceps/Inclinedubellcurls';
+import DumbbellTricepsKickBacks from './components/Biceps&triceps/DumbbellTricepsKickBacks';
+import Pushdown from './components/Biceps&triceps/Pushdown';
+import Closegripbenchpress from './components/Biceps&triceps/Closegripbenchpress';
+import Lyingtricepsextension from './components/Biceps&triceps/Lyingtricepsextension';
+import Cableropeoverheadtricepsextension from './components/Biceps&triceps/Cableropeoverheadtricepsextension';
+import Tricepdips from './components/Biceps&triceps/Tricepsdips';
+import Shoulders from './components/Shoulders/Shoulders';
+import Overheadpress from './components/Shoulders/Overheadpress';
+import Frontraise from './components/Shoulders/Frontraise';
+import Sidelateralraise from './components/Shoulders/Sidelateralraise';
+import Uprightrow from './components/Shoulders/Uprightrow';
+import Arnoldpress from './components/Shoulders/Arnoldpress';
+import Cablelateralraise from './components/Shoulders/Cablelateralraise';
+import ThighsnCalfs from './components/Thighs&calfs/ThighsnCalfs';
+import Calfraises from './components/Thighs&calfs/Calfraises';
+import Legpress from './components/Thighs&calfs/Legpress';
+import Legextension from './components/Thighs&calfs/Legextension';
+import Farmerswalk from './components/Thighs&calfs/Farmerswalk';
+import Gobletsquat from './components/Thighs&calfs/Gobletsquat';
+import Lunge from './components/Thighs&calfs/Lunge';
+import Singlelegcalfraise from './components/Thighs&calfs/Singlelegcalfraise';
+import Squat from './components/Thighs&calfs/Squat';
+import Standingbarbellcalfraise from './components/Thighs&calfs/Standingbarbellcalfraise';
+import Pistonsquats from './components/Thighs&calfs/Pistonsquats';
+import AbsNForearms from './components/Abs&Forearms/AbsNForearms';
+import Crunches from './components/Abs&Forearms/Crunches';
+import Cocoon from './components/Abs&Forearms/Cocoon';
+import Bicyclecrunches from './components/Abs&Forearms/Bicyclecrunches';
+import Forearmpull from './components/Abs&Forearms/Forearmpull';
+import Forearmsqueeze from './components/Abs&Forearms/Forearmsqueeze';
+import Gripcrush from './components/Abs&Forearms/Gripcrush';
+import Legraises from './components/Abs&Forearms/Legraises';
+import Palmsupwristcurl from './components/Abs&Forearms/Palmsupwristcurl';
+import Plank from './components/Abs&Forearms/Plank';
+import SideJackknife from './components/Abs&Forearms/SideJackknife';
+import HChest from './components/Homechest/HChest';
+import Dpushups from './components/Homechest/Dpushups';
+import Declinepushups from './components/Homechest/Declinepushups';
+import Inclinepushups from './components/Homechest/Inclinepushups';
+import FroggyJumps from './components/Homechest/FroggyJumps';
+import JumpingJackstoaStep from './components/Homechest/JumpingJackstoaStep';
+import Jumprope from './components/Homechest/Jumprope';
+import SquatJumps from './components/Homechest/SquatJumps';
+import Shouldertappushup from './components/Homechest/Shouldertappushup';
+import Regularpushups from './components/Homechest/Regularpushups';
+import PullUps from './components/HomeBack/PullUps';
+import Backextension from './components/HomeBack/Backextension';
+import Birddog from './components/HomeBack/Birddog';
+import HBack  from './components/HomeBack/Hback';
+import ResistancebandLatPullDown from './components/HomeBack/ResistancebandLatPullDown';
+import Resistancebandpullapart from './components/HomeBack/Resistancebandpullapart';
+import Chinup from './components/HomeBicepsNTriceps/Chinup';
+import HBiTri from './components/HomeBicepsNTriceps/HBiTri';
+import ReverseGripPushUp from './components/HomeBicepsNTriceps/ReverseGripPushUp';
+import SidePlank from './components/HomeBicepsNTriceps/SidePlank';
+import Triceppushup from './components/HomeBicepsNTriceps/Triceppushup';
+import Weightedbenchdip from './components/HomeBicepsNTriceps/Weightedbenchdip';
+import HandStandWallWalks from './components/HomeShoulders/HandStandWallWalks';
+import Hshoulders from './components/HomeShoulders/Hshoulders';
+import PlanchePushUp from './components/HomeShoulders/PlanchePushUp';
+import ReversePlankHold from './components/HomeShoulders/ReversePlankHold';
+import Hthighs from './components/HomeThighs/Hthighs';
+import BodyweightSquats from './components/HomeThighs/BodyweightSquats';
+import Clamshells   from './components/HomeThighs/Clamshells';
+import GluteBridges from './components/HomeThighs/GluteBridges';
+import InnerThighLegLifts from './components/HomeThighs/InnerThighLegLifts';
+import Lunges from './components/HomeThighs/Lunges';
+import StepUps from './components/HomeThighs/StepUps';
+import WallSits from './components/HomeThighs/WallSits';
+import Hipthrusts from './components/HomeThighs/Hipthrusts';
+import Donkeykicks from './components/HomeThighs/Donkeykicks';
+import HAbs from './components/HomeAbs/HAbs';
+import PlankwithHipDips from './components/HomeAbs/PlankwithHipDips';
+import ReverseCrunches from './components/HomeAbs/ReverseCrunches';
+import RussianTwists from './components/HomeAbs/RussianTwists';
+import Flutterkicks from './components/HomeAbs/Flutterkicks';
+import MuscleGain from './components/Meals/MuscleGain';
+import WeightLoss from './components/Meals/WeightLoss';
+import WLVeg from './components/Meals/WLVeg';
+import WLNonVeg from './components/Meals/WLNonVeg';
+import WLVegWegg from './components/Meals/WLVegWegg';
+import MGNonVeg from './components/Meals/MGNonVeg';
+import MGVeg from './components/Meals/MGVeg';
+import MGVegWegg from './components/Meals/MGVegWegg'; 
+import BridgePose from './components/Yoga/BridgePose';
+import TreePose from './components/Yoga/TreePose';
+import PlankPose from './components/Yoga/PlankPose';
+import PuppyPose from './components/Yoga/PuppyPose';
+import SeatedForwardBend from './components/Yoga/SeatedForwardBend';
+import CatCowPose from './components/Yoga/CatCowPose';
+import ChairPose from './components/Yoga/ChairPose';
+import FishPose from './components/Yoga/FishPose';
+import ExtendedTrianglePose from './components/Yoga/ExtendedTrianglePose';
+import LegsUptheWallPose from './components/Yoga/LegsUptheWallPose';
+import CamelPose from './components/Yoga/CamelPose';
+import ChildsPose from './components/Yoga/ChildsPose';
+import WarriorI from './components/Yoga/WarriorI';
+import WarriorII from './components/Yoga/WarriorII';
+import WarriorIII from './components/Yoga/WarriorIII';
+import HalfPigeonPose from './components/Yoga/HalfPigeonPose';
+import ExtendedPuppyPose from './components/Yoga/ExtendedPuppyPose';
+import GarlandPose from './components/Yoga/GarlandPose';
+import CobraPose from './components/Yoga/CobraPose';
+import SuryaNamaskar from './components/Yoga/SuryaNamaskar';
+import MostMuscular from './components/Posing/MostMuscular';
+import FrontDoubleBiceps from './components/Posing/FrontDoubleBiceps';
+import FrontLatSpread from './components/Posing/FrontLatSpread';
+import SideChest from './components/Posing/SideChest';
+import SideTriceps from './components/Posing/SideTriceps';
+import AbsandThighs from './components/Posing/AbsandThighs';
+import BackDoubleBiceps from './components/Posing/BackDoubleBiceps';
+import BackLatSpread from './components/Posing/BackLatSpread';
+ 
+
+const Stack = createNativeStackNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='SignIn' screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="SignIn" component={SignIn} />
+        <Stack.Screen name="Registration" component={Registration} />
+        <Stack.Screen name="ContentSelection" component={ContentSelection} />
+        <Stack.Screen name="Exercise" component={Exercise} />
+        <Stack.Screen name="Posing" component={Posing} />
+        <Stack.Screen name="Meal" component={Meal} />
+        <Stack.Screen name="Yoga" component={Yoga} />
+        <Stack.Screen name="Gym" component={Gym} />
+        <Stack.Screen name="Homeworkout" component={Homeworkout} />
+        <Stack.Screen name="Chestandcardio" component={Chestandcardio} />
+        <Stack.Screen name="Chest" component={Chest} />
+        <Stack.Screen name="Flatbenchpress" component={Flatbenchpress} />
+        <Stack.Screen name="Inclinedbenchpress" component={Inclinedbenchpress} />
+        <Stack.Screen name="Declinedbenchpress" component={Declinedbenchpress} />
+        <Stack.Screen name="Dumbellfly" component={Dumbellfly} />
+        <Stack.Screen name="Dumbellpullover" component={Dumbellpullover} />
+        <Stack.Screen name="Cablecrossover" component={Cablecrossover} />
+        <Stack.Screen name="Cardio" component={Cardio} />
+        <Stack.Screen name="MountainClimbers" component={MountainClimbers} />
+        <Stack.Screen name="Burpees" component={Burpees} />
+        <Stack.Screen name="JumpingJacks" component={JumpingJacks} />
+        <Stack.Screen name="HighKnees" component={HighKnees} />
+        <Stack.Screen name="JumpingRope" component={JumpingRope} />
+        <Stack.Screen name="Running" component={Running} />
+        <Stack.Screen name="Battelingropes" component={Battelingropes} />
+        <Stack.Screen name="Back" component={Back} />
+        <Stack.Screen name="Latpulldown" component={Latpulldown} />
+        <Stack.Screen name="Onearmdumbbellrow" component={Onearmdumbbellrow} />
+        <Stack.Screen name="Seatedcablerows" component={Seatedcablerows} />
+        <Stack.Screen name="Bentoverrow" component={Bentoverrow} />
+        <Stack.Screen name="Tbarrow" component={Tbarrow} />
+        <Stack.Screen name="Deadlift" component={Deadlift} />
+        <Stack.Screen name="BiecepsNtriceps" component={BiecepsNtriceps} />
+        <Stack.Screen name="Biceps" component={Biceps} />
+        <Stack.Screen name="Triceps" component={Triceps} />
+        <Stack.Screen name="Hammercurls" component={Hammercurls} />
+        <Stack.Screen name="Barbellcurls" component={Barbellcurls} />
+        <Stack.Screen name="Preachercurls" component={Preachercurls} />
+        <Stack.Screen name="Concentrationcurls" component={Concentrationcurls} />
+        <Stack.Screen name="Bicepscurls" component={Bicepscurls} />
+        <Stack.Screen name="Inclinedubellcurls" component={Inclinedubellcurls} />
+        <Stack.Screen name="DumbbellTricepsKickBacks" component={DumbbellTricepsKickBacks} />
+        <Stack.Screen name="Pushdown" component={Pushdown} />
+        <Stack.Screen name="Closegripbenchpress" component={Closegripbenchpress} />
+        <Stack.Screen name="Lyingtricepsextension" component={Lyingtricepsextension} />
+        <Stack.Screen name="Cableropeoverheadtricepsextension" component={Cableropeoverheadtricepsextension} />
+        <Stack.Screen name="Tricepdips" component={Tricepdips} />
+        <Stack.Screen name="Shoulders" component={Shoulders} />
+        <Stack.Screen name="Overheadpress" component={Overheadpress} />
+        <Stack.Screen name="Frontraise" component={Frontraise} />
+        <Stack.Screen name="Sidelateralraise" component={Sidelateralraise} />
+        <Stack.Screen name="Uprightrow" component={Uprightrow} />
+        <Stack.Screen name="Arnoldpress" component={Arnoldpress} />
+        <Stack.Screen name="Cablelateralraise" component={Cablelateralraise} />
+        <Stack.Screen name="ThighsnCalfs" component={ThighsnCalfs} />
+        <Stack.Screen name="Calfraises" component={Calfraises} />
+        <Stack.Screen name="Legpress" component={Legpress} />
+        <Stack.Screen name="Legextension" component={Legextension} />
+        <Stack.Screen name="Farmerswalk" component={Farmerswalk} />
+        <Stack.Screen name="Gobletsquat" component={Gobletsquat} />
+        <Stack.Screen name="Lunge" component={Lunge} />
+        <Stack.Screen name="Singlelegcalfraise" component={Singlelegcalfraise} />
+        <Stack.Screen name="Squat" component={Squat} />
+        <Stack.Screen name="Standingbarbellcalfraise" component={Standingbarbellcalfraise} />
+        <Stack.Screen name="Pistonsquats" component={Pistonsquats} />
+        <Stack.Screen name="AbsNForearms" component={AbsNForearms} />
+        <Stack.Screen name="Crunches" component={Crunches} />
+        <Stack.Screen name="Cocoon" component={Cocoon} />
+        <Stack.Screen name="Bicyclecrunches" component={Bicyclecrunches} />
+        <Stack.Screen name="Forearmpull" component={Forearmpull} />
+        <Stack.Screen name="Forearmsqueeze" component={Forearmsqueeze} />
+        <Stack.Screen name="Gripcrush" component={Gripcrush} />
+        <Stack.Screen name="Legraises" component={Legraises} />
+        <Stack.Screen name="Palmsupwristcurl" component={Palmsupwristcurl} />
+        <Stack.Screen name="Plank" component={Plank} />
+        <Stack.Screen name="SideJackknife" component={SideJackknife} />
+        <Stack.Screen name="HChest" component={HChest} />
+        <Stack.Screen name="Dpushups" component={Dpushups} />
+        <Stack.Screen name="Declinepushups" component={Declinepushups} />
+        <Stack.Screen name="Inclinepushups" component={Inclinepushups} />
+        <Stack.Screen name="FroggyJumps" component={FroggyJumps} />
+        <Stack.Screen name="JumpingJackstoaStep" component={JumpingJackstoaStep} />
+        <Stack.Screen name="Jumprope" component={Jumprope} />
+        <Stack.Screen name="SquatJumps" component={SquatJumps} />
+        <Stack.Screen name="Shouldertappushup" component={Shouldertappushup} />
+        <Stack.Screen name="Regularpushups" component={Regularpushups} />
+        <Stack.Screen name="PullUps" component={PullUps} />
+        <Stack.Screen name="Backextension" component={Backextension} />
+        <Stack.Screen name="Birddog" component={Birddog} />
+        <Stack.Screen name="HBack" component={HBack} />
+        <Stack.Screen name="ResistancebandLatPullDown" component={ResistancebandLatPullDown} />
+        <Stack.Screen name="Resistancebandpullapart" component={Resistancebandpullapart} />
+        <Stack.Screen name="Chinup" component={Chinup} />
+        <Stack.Screen name="HBiTri" component={HBiTri} />
+        <Stack.Screen name="ReverseGripPushUp" component={ReverseGripPushUp} />
+        <Stack.Screen name="SidePlank" component={SidePlank} />
+        <Stack.Screen name="Triceppushup" component={Triceppushup} />
+        <Stack.Screen name="Weightedbenchdip" component={Weightedbenchdip} />
+        <Stack.Screen name="HandStandWallWalks" component={HandStandWallWalks} />
+        <Stack.Screen name="Hshoulders" component={Hshoulders} />
+        <Stack.Screen name="PlanchePushUp" component={PlanchePushUp} />
+        <Stack.Screen name="ReversePlankHold" component={ReversePlankHold} />
+        <Stack.Screen name="Hthighs" component={Hthighs} />
+        <Stack.Screen name="BodyweightSquats" component={BodyweightSquats} />
+        <Stack.Screen name="Clamshells" component={Clamshells} />
+        <Stack.Screen name="GluteBridges" component={GluteBridges} />
+        <Stack.Screen name="InnerThighLegLifts" component={InnerThighLegLifts} />
+        <Stack.Screen name="Lunges" component={Lunges} />
+        <Stack.Screen name="StepUps" component={StepUps} />
+        <Stack.Screen name="WallSits" component={WallSits} />
+        <Stack.Screen name="Hipthrusts" component={Hipthrusts} />
+        <Stack.Screen name="Donkeykicks" component={Donkeykicks} />
+        <Stack.Screen name="HAbs" component={HAbs} />
+        <Stack.Screen name="PlankwithHipDips" component={PlankwithHipDips} />
+        <Stack.Screen name="ReverseCrunches" component={ReverseCrunches} />
+        <Stack.Screen name="RussianTwists" component={RussianTwists} />
+        <Stack.Screen name="Flutterkicks" component={Flutterkicks} />
+        <Stack.Screen name="MuscleGain" component={MuscleGain} />
+        <Stack.Screen name="WeightLoss" component={WeightLoss} />
+        <Stack.Screen name="WLVeg" component={WLVeg} />
+        <Stack.Screen name="WLNonVeg" component={WLNonVeg} />
+        <Stack.Screen name="WLVegWegg" component={WLVegWegg} />
+        <Stack.Screen name="MGNonVeg" component={MGNonVeg} />
+        <Stack.Screen name="MGVeg" component={MGVeg} />
+        <Stack.Screen name="MGVegWegg" component={MGVegWegg} />
+        <Stack.Screen name="BridgePose" component={BridgePose} />
+        <Stack.Screen name="TreePose" component={TreePose} />
+        <Stack.Screen name="PlankPose" component={PlankPose} />
+        <Stack.Screen name="PuppyPose" component={PuppyPose} />
+        <Stack.Screen name="SeatedForwardBend" component={SeatedForwardBend} />
+        <Stack.Screen name="CatCowPose" component={CatCowPose} />
+        <Stack.Screen name="ChairPose" component={ChairPose} />
+        <Stack.Screen name="FishPose" component={FishPose} />
+        <Stack.Screen name="ExtendedTrianglePose" component={ExtendedTrianglePose} />
+        <Stack.Screen name="LegsUptheWallPose" component={LegsUptheWallPose} />
+        <Stack.Screen name="CamelPose" component={CamelPose} />
+        <Stack.Screen name="ChildsPose" component={ChildsPose} />
+        <Stack.Screen name="WarriorI" component={WarriorI} />
+        <Stack.Screen name="WarriorII" component={WarriorII} />
+        <Stack.Screen name="WarriorIII" component={WarriorIII} />
+        <Stack.Screen name="HalfPigeonPose" component={HalfPigeonPose} />
+        <Stack.Screen name="ExtendedPuppyPose" component={ExtendedPuppyPose} />
+        <Stack.Screen name="GarlandPose" component={GarlandPose} />
+        <Stack.Screen name="CobraPose" component={CobraPose} />
+        <Stack.Screen name="SuryaNamaskar" component={SuryaNamaskar} />
+        <Stack.Screen name="MostMuscular" component={MostMuscular} />
+        <Stack.Screen name="FrontDoubleBiceps" component={FrontDoubleBiceps} />
+        <Stack.Screen name="FrontLatSpread" component={FrontLatSpread} />
+        <Stack.Screen name="SideChest" component={SideChest} />
+        <Stack.Screen name="SideTriceps" component={SideTriceps} />
+        <Stack.Screen name="AbsandThighs" component={AbsandThighs} />
+        <Stack.Screen name="BackDoubleBiceps" component={BackDoubleBiceps} />
+        <Stack.Screen name="BackLatSpread" component={BackLatSpread} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default App;
